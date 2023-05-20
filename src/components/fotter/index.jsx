@@ -28,13 +28,31 @@ const FooterTag = styled.footer`
   }
 `;
 
+const IinkDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: aliceblue;
+  gap: 0.6rem;
+  a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 0.8rem;
+  }
+`;
+
 const Footer = () => {
   return (
     <FooterTag>
       <Con>
         <FooterCon>
           <span className="left">© 2023 All rights reserved.</span>
-          <p className="link">Linkedin / Dribbble / Instagram</p>
+          <IinkDiv>
+            <a href="#">Linkedin</a> /
+            <a href="https://www.behance.net/zayedurrahman">Behance</a> /
+            <a href="https://www.facebook.com/zayed662">Facebook</a>
+          </IinkDiv>
         </FooterCon>
       </Con>
     </FooterTag>

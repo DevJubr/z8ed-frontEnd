@@ -14,7 +14,10 @@
 
 # production
 /build
-
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jubayerjr203/z8ed-frontEnd.git
+git push -u origin main
 # misc
 .DS_Store
 *.pem

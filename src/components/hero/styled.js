@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const tablet = `(min-width: 768px)`;
 export const laptop = `(min-width: 992px)`;
@@ -44,12 +44,25 @@ const HeroItem0 = styled.div`
   text-transform: uppercase;
   gap: 0.6rem;
 `;
-
+const Popup = keyframes`
+0%{
+opacity: 1;
+}
+50%{
+  opacity: .2;
+}
+100%{
+  opacity: 1;
+}
+`;
 const ActiveIcon = styled.div`
   width: 10px;
   height: 10px;
   background: #6ccca5;
+  opacity: 1;
   border-radius: 50%;
+  transition: opacity 0.5s;
+  animation: ${Popup} 1s infinite ease-in-out;
 `;
 
 const HeroItem1 = styled.div`

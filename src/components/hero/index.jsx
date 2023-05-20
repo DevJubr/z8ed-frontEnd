@@ -36,10 +36,10 @@ const HeroSection = () => {
           </HeroItem2>
           <HeroItem3>
             <P>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
-              quidem eius unde pariatur ipsa sunt ullam, soluta voluptas nemo
-              facilis dolorem sit aperiam reprehenderit quo neque blanditiis
-              ducimus nisi ratione?
+              experience in logo, stationery, and UX/UI design utilizing Adobe
+              Illustrator, Photoshop, and Figma. Committed to realizing
+              customers' objectives via exceptional results and attention to
+              detail. Let's work together to make something spectacular
             </P>
           </HeroItem3>
           <div className="hero_item_4">

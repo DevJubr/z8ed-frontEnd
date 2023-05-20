@@ -87,7 +87,7 @@ const ProtfolioSection = () => {
         <PortfolioCon>
           <ProfiloHeader>
             <ProfiloHeaderText>
-              <HeadingTitle>portfolio</HeadingTitle>
+              <HeadingTitle>projects</HeadingTitle>
               <HeadingSubtitle>
                 portfolio of our work in last future year.
               </HeadingSubtitle>
