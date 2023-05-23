@@ -9,14 +9,14 @@ import {
 } from "../style.js";
 import Image from "next/image";
 
-const SingelPortfolio = ({ body, button, image, tiitle }) => {
+const SingelPortfolio = ({ body, button, projectImg, title }) => {
   return (
     <Portfolio>
       <PortfolioImg>
-        <Image src={image?.data.attributes.url} width={300} height={200} />
+        <Image src={projectImg?.data.attributes.url} width={300} height={200} />
       </PortfolioImg>
       <PortfolioTextContent>
-        <ProjectName>{tiitle}</ProjectName>
+        <ProjectName>{title}</ProjectName>
         <ProjectSubtitle>{body}</ProjectSubtitle>
       </PortfolioTextContent>
 

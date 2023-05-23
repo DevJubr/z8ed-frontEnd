@@ -10,75 +10,32 @@ import {
   PaginationBtn,
   PaginationBtnDiv,
 } from "./style.js";
-
-const GAP = gql`
-  query Projects($pagination: PaginationArg) {
-    projects(pagination: $pagination) {
-      meta {
-        pagination {
-          total
-          pageSize
-          pageCount
-          page
-        }
-      }
-      data {
-        id
-        attributes {
-          body
-          button
-          image {
-            data {
-              id
-              attributes {
-                url
-              }
-            }
-          }
-          tiitle
-        }
-      }
-    }
-  }
-`;
-
 import SingelPortfolio from "./singelPortfolio";
-import { gql } from "@apollo/client";
-import { getClient } from "@/utils/index.js";
 import { useEffect, useState } from "react";
+import { fetcher } from "@/app/api/index.js";
 const ProtfolioSection = () => {
-  const [Data, setData] = useState({});
-  const [count, setcount] = useState(1);
-
+  const [Projects, setProjects] = useState([]);
+  const [pageN, setpageN] = useState(1);
+  async function jj(page) {
+    const dta = await fetcher(
+      `https://z8dport.onrender.com/api/projects?populate=*&pagination[page]=${page}&pagination[pageSize]=3`
+    );
+    console.log(dta);
+    setProjects(dta.data);
+  }
   useEffect(() => {
-    const client = getClient();
-    const data = client.subscribe({
-      query: GAP,
-      variables: {
-        pagination: {
-          page: count,
-          pageSize: 3,
-        },
-      },
-    });
-    const sub = data.subscribe({
-      next: (result) => setData({ ...result?.data.projects }),
-      error: (e) => console.log(e),
-    });
-
-    return () => sub.unsubscribe();
-  }, [count]);
+    jj(pageN);
+  }, []);
+  console.log(Projects);
   const hendelPagination = (e) => {
     const { name } = e.target;
-    if (name === "prev") {
-      if (count > 1) {
-        setcount((prev) => prev - 1);
-      }
+    if (name === "prev" && pageN > 1) {
+      setpageN((prev) => prev - 1);
+      jj(pageN);
     }
     if (name === "next") {
-      if (count <= Math.ceil(Data?.data?.length / 3)) {
-        setcount((prev) => prev + 1);
-      }
+      setpageN((prev) => prev + 1);
+      jj(pageN);
     }
   };
   return (
@@ -95,7 +52,7 @@ const ProtfolioSection = () => {
           </ProfiloHeader>
 
           <Portfolios>
-            {Data?.data?.map((item) => {
+            {Projects.map((item) => {
               return <SingelPortfolio key={item.id} {...item.attributes} />;
             })}
           </Portfolios>
