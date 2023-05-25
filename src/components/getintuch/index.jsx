@@ -45,7 +45,7 @@ const HeadingSpan = styled.span`
   }
 `;
 
-const GitButton = styled.button`
+const GitButton = styled.a`
   cursor: pointer;
   border: none;
   outline: none;
@@ -59,6 +59,7 @@ const GitButton = styled.button`
     rgba(154, 154, 154, 1) 100%
   );
   border-radius: 0.5rem;
+  color: #2f2f2f;
 `;
 const GetIntouch = () => {
   return (
@@ -66,7 +67,12 @@ const GetIntouch = () => {
       <Con>
         <SetintCon>
           <HeadingSpan>Tell me about your next project</HeadingSpan>
-          <GitButton>get in touch</GitButton>
+          <GitButton
+            target="_blank"
+            href="https://www.behance.net/zayedurrahman"
+          >
+            get in touch
+          </GitButton>
         </SetintCon>
       </Con>
     </GttSection>

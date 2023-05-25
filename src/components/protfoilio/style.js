@@ -153,7 +153,7 @@ const ProjectSubtitle = styled.p`
   letter-spacing: 1px;
 `;
 
-const PortfolioButton = styled.button`
+const PortfolioButton = styled.a`
   border: none;
   outline: none;
   background: #3f5023;
@@ -174,26 +174,30 @@ const PortfolioButton = styled.button`
   }
 `;
 
-const PaginationBtn = styled.button`
-  border: none;
-  outline: none;
-  background: #3f5023;
-  width: 60px;
-  height: 60px;
-  color: aliceblue;
-  border-radius: 50%;
+const PaginationBtn = styled.i`
+  position: relative;
+  z-index: 111;
+  font-size: 1.4rem;
   cursor: pointer;
-  & i {
-    font-size: 1.6rem;
-    width: 100%;
-    height: 100%;
+  &::after {
+    content: "";
+    height: 60px;
+    position: absolute;
+    width: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    background: #3f5023;
+    color: aliceblue;
+    border-radius: 50%;
   }
 `;
 
 const PaginationBtnDiv = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 4rem;
 `;
 
 export {

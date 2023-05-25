@@ -29,6 +29,7 @@ const HeroSection = () => {
               src={
                 "https://res.cloudinary.com/dcdvmj0q4/image/upload/v1683800058/345457272_633572668198003_5035405670325297447_n_b6gs9k.jpg"
               }
+              alt="jrs"
             />
           </HeroItem1>
           <HeroItem2>
@@ -43,7 +44,9 @@ const HeroSection = () => {
             </P>
           </HeroItem3>
           <div className="hero_item_4">
-            <Button>let's talk</Button>
+            <Button target="_blank" href="https://www.facebook.com/zayed662">
+              let's talk
+            </Button>
           </div>
         </SectionHeroCon>
       </Con>

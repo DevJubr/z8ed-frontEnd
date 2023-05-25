@@ -15,3 +15,7 @@ span,
 h1 {
   font-family: "Outfit", sans-serif !important;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}

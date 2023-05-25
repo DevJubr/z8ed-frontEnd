@@ -130,7 +130,7 @@ const P = styled.p`
   }
 `;
 
-const Button = styled.button`
+const Button = styled.a`
   background: #3f5023;
   outline: none;
   border: none;

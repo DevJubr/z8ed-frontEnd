@@ -16,7 +16,7 @@ const FooterTag = styled.footer`
   font-size: 0.5rem;
   font-weight: 300;
   @media ${tablet} {
-    font-size: 0.8rem;
+    font-size: 0.5rem;
   }
 
   @media ${laptop} {
@@ -37,8 +37,8 @@ const IinkDiv = styled.div`
   gap: 0.6rem;
   a {
     text-decoration: none;
-    color: aliceblue;
-    font-size: 0.8rem;
+    color: aliceblue !important;
+    /* font-size: 0.8rem; */
   }
 `;
 
@@ -49,9 +49,17 @@ const Footer = () => {
         <FooterCon>
           <span className="left">© 2023 All rights reserved.</span>
           <IinkDiv>
-            <a href="#">Linkedin</a> /
-            <a href="https://www.behance.net/zayedurrahman">Behance</a> /
-            <a href="https://www.facebook.com/zayed662">Facebook</a>
+            <a target="_blank" href="#">
+              Linkedin
+            </a>
+            /
+            <a target="_blank" href="https://www.behance.net/zayedurrahman">
+              Behance
+            </a>
+            /
+            <a target="_blank" href="https://www.facebook.com/zayed662">
+              Facebook
+            </a>
           </IinkDiv>
         </FooterCon>
       </Con>

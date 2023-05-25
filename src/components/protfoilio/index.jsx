@@ -1,5 +1,5 @@
 "use client";
-import { Con, HeroItem0 } from "../hero/styled.js";
+import { Con } from "../hero/styled.js";
 import {
   PortfolioCon,
   ProfiloHeader,
@@ -20,24 +20,31 @@ const ProtfolioSection = () => {
     const dta = await fetcher(
       `https://z8dport.onrender.com/api/projects?populate=*&pagination[page]=${page}&pagination[pageSize]=3`
     );
-    console.log(dta);
-    setProjects(dta.data);
+    setProjects(dta);
   }
   useEffect(() => {
     jj(pageN);
-  }, []);
-  console.log(Projects);
+  }, [pageN]);
+
   const hendelPagination = (e) => {
-    const { name } = e.target;
-    if (name === "prev" && pageN > 1) {
-      setpageN((prev) => prev - 1);
-      jj(pageN);
+    const name = e.target.attributes.name.nodeValue;
+    console.log(name);
+    if (name === "prev") {
+      if (pageN > 1) {
+        setpageN((prev) => {
+          return prev - 1;
+        });
+      }
     }
-    if (name === "next") {
-      setpageN((prev) => prev + 1);
-      jj(pageN);
-    }
+
+    if (pageN <= Math.ceil(Projects.meta.pagination.total) / 3)
+      if (name === "next") {
+        setpageN((prev) => {
+          return prev + 1;
+        });
+      }
   };
+
   return (
     <div>
       <Con>
@@ -52,18 +59,22 @@ const ProtfolioSection = () => {
           </ProfiloHeader>
 
           <Portfolios>
-            {Projects.map((item) => {
+            {Projects?.data?.map((item) => {
               return <SingelPortfolio key={item.id} {...item.attributes} />;
             })}
           </Portfolios>
 
           <PaginationBtnDiv>
-            <PaginationBtn name="prev" onClick={hendelPagination}>
-              <i class="bi bi-chevron-left"></i>
-            </PaginationBtn>
-            <PaginationBtn name="next" onClick={hendelPagination}>
-              <i class="bi bi-chevron-right"></i>
-            </PaginationBtn>
+            <PaginationBtn
+              className="bi bi-chevron-left"
+              name="prev"
+              onClick={(e) => hendelPagination(e)}
+            ></PaginationBtn>
+            <PaginationBtn
+              name="next"
+              className="bi bi-chevron-right"
+              onClick={(e) => hendelPagination(e)}
+            ></PaginationBtn>
           </PaginationBtnDiv>
         </PortfolioCon>
       </Con>
