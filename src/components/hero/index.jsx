@@ -27,7 +27,7 @@ const HeroSection = () => {
               width={100}
               height={100}
               src={
-                "https://res.cloudinary.com/dcdvmj0q4/image/upload/v1683800058/345457272_633572668198003_5035405670325297447_n_b6gs9k.jpg"
+                "https://drive.google.com/uc?id=1gBRopqFWzoVSVOHd0LedYGeLHrI4QOK9"
               }
               alt="jrs"
             />
